@@ -1,0 +1,512 @@
+sh-4.4$ cat META-INF/ejb-jar.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<ejb-jar id="ejb-jar_ID" version="2.1" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/ejb-jar_2_1.xsd">
+        <display-name>MBO EJB Module</display-name>
+        <enterprise-beans>
+                <session id="Session_enterpriseservice">
+                        <ejb-name>enterpriseservice</ejb-name>
+                        <home>psdi.iface.gateway.MEAGatewayHome</home>
+                        <remote>psdi.iface.gateway.MEAGateway</remote>
+                        <local-home>psdi.iface.gateway.MEAGatewayHomeLocal</local-home>
+                        <local>psdi.iface.gateway.MEAGatewayLocal</local>
+                        <ejb-class>psdi.iface.gateway.MEAGatewayBean</ejb-class>
+                        <session-type>Stateless</session-type>
+                        <transaction-type>Container</transaction-type>
+                      <env-entry>
+                        <env-entry-name>ALLOWDFLTLOGIN</env-entry-name>
+                        <env-entry-type>java.lang.String</env-entry-type>
+                        <env-entry-value>1</env-entry-value>
+                      </env-entry>      
+                        <security-role-ref>
+                                        <description>
+                                                MAXIMO Application Users
+                                        </description>
+                                        <role-name>maximouser</role-name>
+                                        <role-link>maximouser</role-link>
+                        </security-role-ref>
+                </session>
+                <session id="Session_mosservice">
+                        <ejb-name>mosservice</ejb-name>
+                        <home>psdi.iface.mos.MOSServiceHome</home>
+                        <remote>psdi.iface.mos.MOSServiceRemote</remote>
+                        <local-home>psdi.iface.mos.MOSServiceHomeLocal</local-home>
+                        <local>psdi.iface.mos.MOSServiceLocal</local>
+                        <ejb-class>psdi.iface.mos.MOSServiceBean</ejb-class>
+                        <session-type>Stateless</session-type>
+                        <transaction-type>Container</transaction-type>
+                      <env-entry>
+                        <env-entry-name>ALLOWDFLTLOGIN</env-entry-name>
+                        <env-entry-type>java.lang.String</env-entry-type>
+                        <env-entry-value>1</env-entry-value>
+                      </env-entry>      
+                        <security-role-ref>
+                                        <description>
+                                                MAXIMO Application Users
+                                        </description>
+                                        <role-name>maximouser</role-name>
+                                        <role-link>maximouser</role-link>
+                        </security-role-ref>
+                </session>
+                <session id="Session_actionservice">
+                        <ejb-name>actionservice</ejb-name>
+                        <home>psdi.iface.action.MAXActionServiceHome</home>
+                        <remote>psdi.iface.action.MAXActionServiceRemote</remote>
+                        <local-home>psdi.iface.action.MAXActionServiceHomeLocal</local-home>
+                        <local>psdi.iface.action.MAXActionServiceLocal</local>
+                        <ejb-class>psdi.iface.action.MAXActionServiceBean</ejb-class>
+                        <session-type>Stateless</session-type>
+                        <transaction-type>Container</transaction-type>
+                      <env-entry>
+                        <env-entry-name>ALLOWDFLTLOGIN</env-entry-name>
+                        <env-entry-type>java.lang.String</env-entry-type>
+                        <env-entry-value>1</env-entry-value>
+                      </env-entry>      
+                        <security-role-ref>
+                                        <description>
+                                                MAXIMO Application Users
+                                        </description>
+                                        <role-name>maximouser</role-name>
+                                        <role-link>maximouser</role-link>
+                        </security-role-ref>
+                </session>
+                <session id="Session_wfservice">
+                        <ejb-name>wfservice</ejb-name>
+                        <home>psdi.iface.workflow.WorkFlowServiceHome</home>
+                        <remote>psdi.iface.workflow.WorkFlowServiceRemote</remote>
+                        <local-home>psdi.iface.workflow.WorkFlowServiceHomeLocal</local-home>
+                        <local>psdi.iface.workflow.WorkFlowServiceLocal</local>
+                        <ejb-class>psdi.iface.workflow.WorkFlowServiceBean</ejb-class>
+                        <session-type>Stateless</session-type>
+                        <transaction-type>Container</transaction-type>
+                      <env-entry>
+                        <env-entry-name>ALLOWDFLTLOGIN</env-entry-name>
+                        <env-entry-type>java.lang.String</env-entry-type>
+                        <env-entry-value>1</env-entry-value>
+                      </env-entry>      
+                        <security-role-ref>
+                                        <description>
+                                                MAXIMO Application Users
+                                        </description>
+                                        <role-name>maximouser</role-name>
+                                        <role-link>maximouser</role-link>
+                        </security-role-ref>
+                </session>
+                <session id="Session_jaxwsclient">
+                        <ejb-name>jaxwsclient</ejb-name>
+                        <home>psdi.iface.webservices.WSHandlerHome</home>
+                        <remote>psdi.iface.webservices.WSHandlerRemote</remote>
+                        <ejb-class>psdi.iface.webservices.WSHandlerBean</ejb-class>
+                        <session-type>Stateless</session-type>
+                        <transaction-type>Container</transaction-type>
+                </session>
+        <session id="Session_1077125347715">
+                <ejb-name>accesstokenprovider</ejb-name>
+                <home>psdi.security.ejb.AccessTokenProviderHomeRemote</home>
+                <remote>psdi.security.ejb.AccessTokenProviderRemote</remote>
+                <local-home>psdi.security.ejb.AccessTokenProviderHomeLocal</local-home>
+                <local>psdi.security.ejb.AccessTokenProviderLocal</local>
+                <ejb-class>psdi.security.ejb.AccessTokenProviderBean</ejb-class>
+                <session-type>Stateless</session-type>
+                <transaction-type>Container</transaction-type>
+                <security-role-ref>
+                                <description>
+                                        MAXIMO Application Users
+                                </description>
+                                <role-name>maximouser</role-name>
+                                <role-link>maximouser</role-link>
+                </security-role-ref>
+        </session>
+
+<!-- Email Listener JMS is not deployed by default
+
+      <message-driven id="MessageDriven_LSNRMessageBean">
+        <ejb-name>LSNRMessageBean</ejb-name>
+        <ejb-class>psdi.common.emailstner.LSNRMessageBean</ejb-class>
+              <transaction-type>Container</transaction-type>
+              <message-destination-type>javax.jms.Queue</message-destination-type>
+      </message-driven>
+-->
+
+<!-- MEA MDB  -->
+    <message-driven id="MessageDriven_JMSContQueueProcessor_1">
+      <ejb-name>JMSContQueueProcessor-1</ejb-name>
+      <ejb-class>psdi.iface.jms.JMSContQueueProcessor</ejb-class>
+      <transaction-type>Container</transaction-type>
+      <message-destination-type>javax.jms.Queue</message-destination-type>
+      <env-entry>
+        <env-entry-name>MESSAGEPROCESSOR</env-entry-name>
+        <env-entry-type>java.lang.String </env-entry-type>
+        <env-entry-value>psdi.iface.jms.QueueToMaximoProcessor</env-entry-value>
+      </env-entry> 
+    </message-driven>
+
+<!-- MEA MDB For Out Cont Queue -->
+    <message-driven id="MessageDriven_JMSContOutQueueProcessor_1">
+      <ejb-name>JMSContOutQueueProcessor-1</ejb-name>
+      <ejb-class>psdi.iface.jms.JMSContQueueProcessor</ejb-class>
+      <transaction-type>Container</transaction-type>
+      <message-destination-type>javax.jms.Queue</message-destination-type>
+      <env-entry>
+        <env-entry-name>MESSAGEPROCESSOR</env-entry-name>
+        <env-entry-type>java.lang.String </env-entry-type>
+        <env-entry-value>psdi.iface.jms.QueueToDestManagerProcessor</env-entry-value>
+      </env-entry> 
+    </message-driven>
+
+<!-- MEA MDB custom - procesa cola continua cqin_gis -->
+    <message-driven id="MessageDriven_JMSContQueueProcessor_3">
+      <ejb-name>JMSContQueueProcessor-3</ejb-name>
+      <ejb-class>psdi.iface.jms.JMSContQueueProcessor</ejb-class>
+      <transaction-type>Container</transaction-type>
+      <message-destination-type>javax.jms.Queue</message-destination-type>
+      <env-entry>
+        <env-entry-name>MESSAGEPROCESSOR</env-entry-name>
+        <env-entry-type>java.lang.String </env-entry-type>
+        <env-entry-value>psdi.iface.jms.QueueToMaximoProcessor</env-entry-value>
+      </env-entry>
+    </message-driven>
+
+<!-- Notf MDB  
+            <message-driven id="MessageDriven_JMSNotificationProcessor_1">
+              <ejb-name>JMSNotificationProcessor-1</ejb-name>
+              <ejb-class>psdi.iface.jms.JMSContQueueProcessor</ejb-class>
+              <transaction-type>Container</transaction-type>
+              <message-destination-type>javax.jms.Queue</message-destination-type>
+              <env-entry>
+                <env-entry-name>MESSAGEPROCESSOR</env-entry-name>
+                <env-entry-type>java.lang.String </env-entry-type>
+                <env-entry-value>com.ibm.tivoli.maximo.notification.NotificationMessageProcessor</env-entry-value>
+              </env-entry> 
+            </message-driven>
+-->
+
+<!-- MEA MDB for error queue
+    <message-driven id="MessageDriven_JMSContQueueProcessor_2">
+      <ejb-name>JMSContQueueProcessor-2</ejb-name>
+      <ejb-class>psdi.iface.jms.JMSContQueueProcessor</ejb-class>
+      <transaction-type>Container</transaction-type>
+      <message-destination-type>javax.jms.Queue</message-destination-type>
+      <env-entry>
+        <env-entry-name>MESSAGEPROCESSOR</env-entry-name>
+        <env-entry-type>java.lang.String </env-entry-type>
+        <env-entry-value>psdi.iface.jms.QueueToMaximoProcessor</env-entry-value>
+      </env-entry> 
+      <env-entry>
+        <env-entry-name>MDBDELAY</env-entry-name>
+        <env-entry-type>java.lang.Long </env-entry-type>
+        <env-entry-value>30000</env-entry-value>
+      </env-entry>      
+      <env-entry>
+        <env-entry-name>ERRORQUEUE</env-entry-name>
+        <env-entry-type>java.lang.String </env-entry-type>
+        <env-entry-value>1</env-entry-value>
+      </env-entry>      
+      
+    </message-driven>
+-->
+
+<!-- MEA MDB for out error queue
+    <message-driven id="MessageDriven_JMSContOutQueueProcessor_2">
+      <ejb-name>JMSContOutQueueProcessor-2</ejb-name>
+      <ejb-class>psdi.iface.jms.JMSContQueueProcessor</ejb-class>
+      <transaction-type>Container</transaction-type>
+      <message-destination-type>javax.jms.Queue</message-destination-type>
+      <env-entry>
+        <env-entry-name>MESSAGEPROCESSOR</env-entry-name>
+        <env-entry-type>java.lang.String </env-entry-type>
+        <env-entry-value>psdi.iface.jms.QueueToDestManagerProcessor</env-entry-value>
+      </env-entry> 
+      <env-entry>
+        <env-entry-name>MDBDELAY</env-entry-name>
+        <env-entry-type>java.lang.Long </env-entry-type>
+        <env-entry-value>30000</env-entry-value>
+      </env-entry>      
+      <env-entry>
+        <env-entry-name>ERRORQUEUE</env-entry-name>
+        <env-entry-type>java.lang.String </env-entry-type>
+        <env-entry-value>1</env-entry-value>
+      </env-entry>      
+      
+    </message-driven>
+-->
+
+        </enterprise-beans>
+
+        <assembly-descriptor>
+                <security-role>
+                        <description>
+                                MAXIMO Application Users
+                        </description>
+                        <role-name>maximouser</role-name>
+                </security-role>
+
+                <method-permission>
+                        <description>MAXIMO Application permissions</description>
+                        <role-name>maximouser</role-name>
+                        <method>
+                            <ejb-name>accesstokenprovider</ejb-name>
+                            <method-name>getAccessToken</method-name>
+                        </method>
+                </method-permission>
+
+                <method-permission>
+                        <unchecked/>
+                        <method>
+                            <ejb-name>enterpriseservice</ejb-name>
+                            <method-name>processExternalDataSync</method-name>
+                        </method>
+                </method-permission>
+
+                <method-permission>
+                        <unchecked/>
+                        <method>
+                            <ejb-name>enterpriseservice</ejb-name>
+                            <method-name>maxSecureProcessExternalDataSync</method-name>
+                        </method>
+                </method-permission>
+
+                <method-permission>
+                        <unchecked/>
+                        <method>
+                            <ejb-name>enterpriseservice</ejb-name>
+                            <method-name>maxSecureProcessExternalDataAsync</method-name>
+                        </method>
+                </method-permission>
+
+                <method-permission>
+                        <unchecked/>
+                        <method>
+                            <ejb-name>enterpriseservice</ejb-name>
+                            <method-name>processExternalDataAsync</method-name>
+                        </method>
+                </method-permission>
+
+                <method-permission>
+                        <role-name>maximouser</role-name>
+                        <method>
+                            <ejb-name>enterpriseservice</ejb-name>
+                            <method-name>secureProcessExternalDataSync</method-name>
+                        </method>
+                </method-permission>
+
+                <method-permission>
+                        <role-name>maximouser</role-name>
+                        <method>
+                            <ejb-name>enterpriseservice</ejb-name>
+                            <method-name>secureProcessExternalDataAsync</method-name>
+                        </method>
+                </method-permission>
+
+                <method-permission>
+                        <unchecked/>
+                        <method>
+                            <ejb-name>wfservice</ejb-name>
+                            <method-name>processWorkflow</method-name>
+                        </method>
+                </method-permission>
+
+                <method-permission>
+                        <role-name>maximouser</role-name>
+                        <method>
+                            <ejb-name>wfservice</ejb-name>
+                            <method-name>secureProcessWorkflow</method-name>
+                        </method>
+                </method-permission>
+
+                <method-permission>
+                        <unchecked/>
+                        <method>
+                            <ejb-name>wfservice</ejb-name>
+                            <method-name>maxSecureProcessWorkflow</method-name>
+                        </method>
+                </method-permission>
+
+                <method-permission>
+                        <unchecked/>
+                        <method>
+                            <ejb-name>jaxwsclient</ejb-name>
+                            <method-name>invoke</method-name>
+                        </method>
+                </method-permission>
+
+                <method-permission>
+                        <role-name>maximouser</role-name>
+                        <method>
+                            <ejb-name>mosservice</ejb-name>
+                            <method-name>secureProcessMOS</method-name>
+                        </method>
+                </method-permission>
+
+                <method-permission>
+                        <unchecked/>
+                        <method>
+                            <ejb-name>mosservice</ejb-name>
+                            <method-name>processMOS</method-name>
+                        </method>
+                </method-permission>
+
+                <method-permission>
+                        <unchecked/>
+                        <method>
+                            <ejb-name>mosservice</ejb-name>
+                            <method-name>maxSecureProcessMOS</method-name>
+                        </method>
+                </method-permission>
+
+                <method-permission>
+                        <role-name>maximouser</role-name>
+                        <method>
+                            <ejb-name>actionservice</ejb-name>
+                            <method-name>secureAction</method-name>
+                        </method>
+                </method-permission>
+
+                <method-permission>
+                        <unchecked/>
+                        <method>
+                            <ejb-name>actionservice</ejb-name>
+                            <method-name>action</method-name>
+                        </method>
+                </method-permission>
+
+                <method-permission>
+                        <unchecked/>
+                        <method>
+                            <ejb-name>actionservice</ejb-name>
+                            <method-name>maxSecureAction</method-name>
+                        </method>
+                </method-permission>
+
+
+                <container-transaction>
+                        <method>
+                        <ejb-name>accesstokenprovider</ejb-name>
+                                <method-name>*</method-name>
+                        </method>
+                        <trans-attribute>Supports</trans-attribute>
+                </container-transaction>
+
+                <container-transaction>
+                        <method>
+                        <ejb-name>enterpriseservice</ejb-name>
+                                <method-name>*</method-name>
+                        </method>
+                        <trans-attribute>Supports</trans-attribute>
+                </container-transaction>
+
+                <container-transaction>
+                        <method>
+                        <ejb-name>mosservice</ejb-name>
+                                <method-name>*</method-name>
+                        </method>
+                        <trans-attribute>Supports</trans-attribute>
+                </container-transaction>
+
+                <container-transaction>
+                        <method>
+                        <ejb-name>actionservice</ejb-name>
+                                <method-name>*</method-name>
+                        </method>
+                        <trans-attribute>Supports</trans-attribute>
+                </container-transaction>
+
+                <container-transaction>
+                        <method>
+                        <ejb-name>wfservice</ejb-name>
+                                <method-name>*</method-name>
+                        </method>
+                        <trans-attribute>Supports</trans-attribute>
+                </container-transaction>
+
+                <container-transaction>
+                        <method>
+                        <ejb-name>jaxwsclient</ejb-name>
+                                <method-name>*</method-name>
+                        </method>
+                        <trans-attribute>Supports</trans-attribute>
+                </container-transaction>
+
+<!-- Email Listener JMS is not deployed by default
+
+                <container-transaction>
+                        <method>
+                                <ejb-name>LSNRMessageBean</ejb-name>
+                                <method-name>*</method-name>
+                        </method>
+    
+                        <trans-attribute>Required</trans-attribute>
+                </container-transaction>
+-->
+
+
+<!-- MEA MDB -->
+    <container-transaction>
+        <method>
+           <ejb-name>JMSContQueueProcessor-1</ejb-name>
+           <method-name>*</method-name>
+        </method>
+    
+        <trans-attribute>Required</trans-attribute>
+    
+    </container-transaction>
+
+<!-- MEA MDB custom - cqin_gis -->
+    <container-transaction>
+        <method>
+           <ejb-name>JMSContQueueProcessor-3</ejb-name>
+           <method-name>*</method-name>
+        </method>
+        <trans-attribute>Required</trans-attribute>
+    </container-transaction>
+
+<!-- MEA MDB for error queue
+
+
+    <container-transaction>
+        <method>
+           <ejb-name>JMSContQueueProcessor-2</ejb-name>
+           <method-name>*</method-name>
+        </method>
+    
+        <trans-attribute>Required</trans-attribute>
+    
+    </container-transaction>
+-->
+<!-- MEA MDB for out queue -->
+    <container-transaction>
+        <method>
+           <ejb-name>JMSContOutQueueProcessor-1</ejb-name>
+           <method-name>*</method-name>
+        </method>
+    
+        <trans-attribute>Required</trans-attribute>
+    
+    </container-transaction>
+
+<!-- MEA MDB for out error queue
+    <container-transaction>
+        <method>
+           <ejb-name>JMSContOutQueueProcessor-2</ejb-name>
+           <method-name>*</method-name>
+        </method>
+    
+        <trans-attribute>Required</trans-attribute>
+    
+    </container-transaction>
+ -->
+<!-- Notf MDB
+    <container-transaction>
+        <method>
+           <ejb-name>JMSNotificationProcessor-1</ejb-name>
+           <method-name>*</method-name>
+        </method>
+    
+        <trans-attribute>Required</trans-attribute>
+    
+    </container-transaction>
+-->
+
+
+        </assembly-descriptor>
+        <ejb-client-jar>mboejbclient.jar</ejb-client-jar>
+</ejb-jar>
